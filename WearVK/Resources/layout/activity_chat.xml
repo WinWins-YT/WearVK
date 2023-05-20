@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                              xmlns:app="http://schemas.android.com/apk/res-auto"
+                                              xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent">
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_boxedEdges="all"
+    android:padding="@dimen/inner_frame_layout_padding">
+
+    <androidx.wear.widget.WearableRecyclerView
+            android:id="@+id/recycler_chat_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:scrollbars="vertical" android:layout_weight="2"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text=""
+                android:id="@+id/chatMessageTxt"
+                android:layout_weight="2"/>
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:src="@drawable/ic_send" 
+                android:id="@+id/chatSendBtn"
+                android:padding="8px"/>
+    </LinearLayout>
+
+</LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>

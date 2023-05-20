@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/postGroupImage" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="GroupName"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/postGroupNameTxt" />
+            <TextView
+                android:text="Text"
+                android:layout_marginTop="16px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postDateTxt" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:id="@+id/postText" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:visibility="invisible"
+            android:id="@+id/postImage" />
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/postProgress" />
+
+    </FrameLayout>
+
+    <Button
+        android:text="Like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postLikeBtn" />
+
+    <Button
+        android:text="Comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postCommentBtn" />
+
+
+
+
+
+</LinearLayout>

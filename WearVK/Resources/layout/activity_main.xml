@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:gravity="center_vertical">
+
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_gravity="center"
+            android:id="@+id/mainProgress"/>
+    
+    <androidx.wear.widget.WearableRecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recycler_launcher_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:focusable="true"
+        android:scrollbars="vertical" />
+
+
+    <androidx.wear.widget.BoxInsetLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/mainMenuLoginLayout"
+            app:layout_boxedEdges="all">
+            <TextView
+                android:text="Login failed. Do you want to relogin?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:gravity="center"
+                android:id="@+id/mainMenuLoginText" />
+            <Button
+                android:text="Yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mainMenuLoginBtnYes" />
+            <Button
+                android:text="No"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mainMenuLoginBtnNo" />
+        </LinearLayout>
+    </androidx.wear.widget.BoxInsetLayout>
+
+</FrameLayout>
