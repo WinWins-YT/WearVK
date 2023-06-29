@@ -24,9 +24,9 @@ namespace WearVK
         private WearableRecyclerView _recyclerView;
         private EditText _messageTxt;
         private long _peerId;
-        private Random _rnd = new Random();
+        private readonly Random _rnd = new Random();
         private ChatAdapter _adapter;
-        private long _lastMessageId = 0;
+        private int _loadedPages = 0;
         
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,6 +46,7 @@ namespace WearVK
 
             _adapter = new ChatAdapter();
             _recyclerView.GenericMotion += Recycler_GenericMotion;
+            _recyclerView.ScrollChange += RecyclerViewOnScrollChange; 
             _recyclerView.EdgeItemsCenteringEnabled = true;
             /*_recyclerView.SetLayoutManager(new WearableLinearLayoutManager(this, new CustomScrollingLayoutCallback())
             {
@@ -61,16 +62,23 @@ namespace WearVK
             _ = LoadMore();
         }
 
+        private void RecyclerViewOnScrollChange(object sender, View.ScrollChangeEventArgs e)
+        {
+            if (!e.V.CanScrollVertically(-1))
+                _ = LoadMore();
+        }
+
         private async Task LoadMore()
         {
-            _adapter.Items.Clear();
             try
             {
                 var messages = await MainActivity.VK.Messages.GetHistoryAsync(new MessagesGetHistoryParams
                 {
                     PeerId = _peerId,
                     Extended = true,
-                    Reversed = false
+                    Reversed = false,
+                    Offset = _loadedPages++ * 20,
+                    Count = 20,
                 });
                 Bitmap opImage;
                 string opName;

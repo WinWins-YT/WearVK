@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">WearVK</string>
+	<string name="app_name">WearVK</string>
 	<string name="loginLoginText">Login</string>
 	<string name="loginPassText">Password</string>
-	<string name="loginLoginBtnText">Login</string>
+	<string name="loginTwoFactor">Enter two-factor code in box below</string>
+	<string name="loginTwoFactorCode">Code</string>
 </resources>

@@ -30,6 +30,14 @@ namespace WearVK.RecyclerAdapters
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
+            (holder as PostsViewHolder).progressBar.Visibility = ViewStates.Visible;
+            (holder as PostsViewHolder).imageView.Visibility = ViewStates.Gone;
+            (holder as PostsViewHolder).textView.Text = "Loading...";
+            (holder as PostsViewHolder).button.Text = "Like (...)";
+            (holder as PostsViewHolder).comButton.Text = "Comments (...)";
+            (holder as PostsViewHolder).groupImage.SetImageBitmap(PostsActivity.groupPic);
+            (holder as PostsViewHolder).groupName.Text = PostsActivity.groupName;
+            (holder as PostsViewHolder).dateText.Text = "Loading...";
             _ = DownloadBitmap(Items[position].Item1, Items[position].Item2, Items[position].Item3, holder, position);
         }
 

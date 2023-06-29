@@ -1,39 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <androidx.wear.widget.BoxInsetLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="vertical"
-        app:layout_boxedEdges="all">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_boxedEdges="all"
+            android:id="@+id/loginLoginLayout">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:hint="@string/loginLoginText"
-            android:id="@+id/loginLoginTxt"
-            android:inputType="text" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:hint="@string/loginLoginText"
+                android:id="@+id/loginLoginTxt"
+                android:inputType="text" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/loginPassText"
-            android:id="@+id/loginPassTxt" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/loginPassText"
+                android:id="@+id/loginPassTxt" />
 
         <Button
-            android:text="@string/loginLoginBtnText"
+                android:text="@string/loginLoginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginLoginBtn" />
+
+    </LinearLayout>
+
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/loginLoginBtn" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            app:layout_boxedEdges="all"
+            android:id="@+id/loginTwoFactorLayout"
+            android:visibility="gone">
+
+        <TextView
+                android:text="@string/loginTwoFactor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/loginTwoFactorTxt" />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/loginTwoFactorCode"
+                android:id="@+id/loginTwoFactorCodeTxt"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/loginLoginText"
+                android:id="@+id/loginTwoFactorBtn"/>
 
     </LinearLayout>
 </androidx.wear.widget.BoxInsetLayout>

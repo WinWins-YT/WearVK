@@ -20,6 +20,7 @@ using VkNet.AudioBypassService.Extensions;
 using VkNet.Enums.Filters;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
+using VkNet.Utils;
 using WearVK.RecyclerAdapters;
 using Button = Android.Widget.Button;
 
@@ -123,12 +124,13 @@ namespace WearVK
                 VK = new VkApi(services);
                 await VK.AuthorizeAsync(new ApiAuthParams()
                 {
-                    ApplicationId = 7960313,
-                    //AccessToken = pref.GetString("token", "")
-                    Login = pref.GetString("login", ""),
-                    Password = pref.GetString("password", ""),
+                    ApplicationId = 2274003,
+                    AccessToken = pref.GetString("token", ""),
+                    IsTokenUpdateAutomatically = true,
                     Settings = Settings.All
                 });
+                var response = await VK.CallAsync("users.get", new VkParameters());
+                VK.UserId = Convert.ToInt64(response[0]["id"].ToString());
                 Toast.MakeText(this, "Logged in!", ToastLength.Short).Show();
                 using var client = new HttpClient();
                 var user = (await VK.Users.GetAsync(new long[] { VK.UserId.Value }, ProfileFields.FirstName | ProfileFields.LastName | ProfileFields.Photo50)).First();

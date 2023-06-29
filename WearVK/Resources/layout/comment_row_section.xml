@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerInside"
                 android:id="@+id/comImage"
+                android:adjustViewBounds="true"
                 android:visibility="gone"/>
 
 

@@ -26,7 +26,16 @@ namespace WearVK.RecyclerAdapters
         
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            _ = DownloadPost(Items[position], (NewsViewHolder)holder);
+            var h = (NewsViewHolder)holder;
+            h.imageView.Visibility = ViewStates.Gone;
+            h.groupName.Text = "...";
+            h.textView.Text = "Loading...";
+            h.likeButton.Text = "Like (...)";
+            h.comButton.Text = "Comment (...)";
+            h.dateText.Text = "...";
+            h.progressBar.Visibility = ViewStates.Visible;
+            
+            _ = DownloadPost(Items[position], h);
         }
 
         private async Task DownloadPost((string, NewsItem) post, NewsViewHolder holder)
