@@ -57,10 +57,11 @@
                 android:id="@+id/loginTwoFactorTxt" />
 
         <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/loginTwoFactorCode"
-                android:id="@+id/loginTwoFactorCodeTxt"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/loginTwoFactorCode"
+            android:id="@+id/loginTwoFactorCodeTxt"
+            android:inputType="text" />
 
         <Button
                 android:layout_width="match_parent"

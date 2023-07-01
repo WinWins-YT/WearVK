@@ -80,23 +80,30 @@ namespace WearVK
 
         private string GetTwoFactor()
         {
-            mainLayout.Visibility = Android.Views.ViewStates.Gone;
-            twoFactorLayout.Visibility = Android.Views.ViewStates.Visible;
             bool ok = false;
 
-            twoFactorBtn.Click += (s, e) =>
+            RunOnUiThread(() =>
             {
-                twoFactorBtn.Enabled = false;
-                ok = true;
-            };
+                mainLayout.Visibility = Android.Views.ViewStates.Gone;
+                twoFactorLayout.Visibility = Android.Views.ViewStates.Visible;
+
+                twoFactorBtn.Click += (s, e) =>
+                {
+                    twoFactorBtn.Enabled = false;
+                    ok = true;
+                };
+            });
 
             while (!ok) { }
 
             string code = twoFactorTxt.Text;
-            twoFactorTxt.Text = "";
-            twoFactorBtn.Enabled = true;
-            twoFactorLayout.Visibility = Android.Views.ViewStates.Gone;
-            mainLayout.Visibility = Android.Views.ViewStates.Visible;
+            RunOnUiThread(() =>
+            {
+                twoFactorTxt.Text = "";
+                twoFactorBtn.Enabled = true;
+                twoFactorLayout.Visibility = Android.Views.ViewStates.Gone;
+                mainLayout.Visibility = Android.Views.ViewStates.Visible;
+            });
 
             return code;
         }

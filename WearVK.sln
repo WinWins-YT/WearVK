@@ -8,12 +8,16 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release (APK)|Any CPU = Release (APK)|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release (APK)|Any CPU.ActiveCfg = Release (APK)|Any CPU
+		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release (APK)|Any CPU.Build.0 = Release (APK)|Any CPU
+		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release (APK)|Any CPU.Deploy.0 = Release (APK)|Any CPU
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35383908-8995-43E7-BF5D-47E02ECAE2D6}.Release|Any CPU.Deploy.0 = Release|Any CPU
